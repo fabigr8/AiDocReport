@@ -1,5 +1,8 @@
 # AI Doc Report
 
+> [!WARNING]  
+> This Repo is still in development: app and functions are not fully functional jet.
+
 This application is a PoC for automating the patient checkout process, especially the doctors report. We try to achieve this, by using the medical data of patients and summarizing it with Large Language Models.
 
 # technicallities
