@@ -11,3 +11,12 @@ in particullar we use
 
 
 ![Architecutre overview](architecture.png)
+
+# Get-started
+1. pre-quisite: python env with installed streamlit pkg.
+2. open a terminal and navigate to the project folder
+3. start streamlit via:
+```
+streamlit run main.py
+
+```

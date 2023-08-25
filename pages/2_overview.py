@@ -25,8 +25,8 @@ if 'pid' not in st.session_state:
 else:
     patient_id = st.session_state['pid']
 
-
-#show patient details
+# ##################### Page Content
+#get patient details from sqllite DB
 if patient_id is not None:
     with conn:
         # get the Patient Data
@@ -34,13 +34,15 @@ if patient_id is not None:
         # get the Patient Data
         patient = c.fetchone()
 
-    if patient is not None:
-        st.write("Patiend ID:", patient[0])
-        st.write("Name ID:", patient[1])
-        st.write("Family Name ID:", patient[2])
-        st.write("Patient Mail:", patient[3])
-    else:
-        st.write("Patient not found")
+st.write("### Selected patients details")
+
+if patient is not None:
+    st.write("Patiend ID:", patient[0])
+    st.write("Name:", patient[1])
+    st.write("Family Name:", patient[2])
+    st.write("Patient Mail:", patient[3])
+else:
+    st.write("Patient not found")
 
 
 

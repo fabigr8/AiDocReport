@@ -80,9 +80,8 @@ if df is not None:
     # if selected get data
     if selected_indices is not None:
         selected_rows = df.loc[selected_indices].copy()
-        st.table(selected_rows)
-
-
+        # st.table(selected_rows)
+    
 
 
 # yes select this patient
