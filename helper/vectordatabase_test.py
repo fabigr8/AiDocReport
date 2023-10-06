@@ -30,20 +30,25 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 
 from tqdm.auto import tqdm
 from uuid import uuid4
+import configparser as cpa
 
+# read config file with api keys
+configparser = cpa.RawConfigParser()   
+configFilePath = 'config.txt'
+configParser.read(configFilePath)
 
 # # ########################### Pincone connection
 
 # API key in console at app.pinecone.io
-YOUR_API_KEY = getpass("Pinecone API Key: ")
+PINE_API_KEY = getpass("Pinecone API Key: ")
 
 # find ENV (cloud region) next to API key in console
-YOUR_ENV = input("Pinecone environment: ")
+PINE_ENV = input("Pinecone environment: ")
 
-index_name = 'aidocrep' # 'langchain-retrieval-agent'
+PINE_INDEX = 'aidocrep' # 'langchain-retrieval-agent'
 pinecone.init(
-    api_key=YOUR_API_KEY,
-    environment=YOUR_ENV
+    api_key=PINE_API_KEY,
+    environment=PINE_ENV
 )
 
 if index_name not in pinecone.list_indexes():
